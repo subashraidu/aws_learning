@@ -1,0 +1,80 @@
+ ## cloud,private,public, virtualization
+
+# cloud
+loud computing is the on-demand delivery of IT resources via the internet with pay-as-you-go pricing.
+
+Cloud (or Cloud Computing) is the delivery of computing services—like servers, storage, databases, networking, software, and more—over the internet ("the cloud") instead of using local servers or personal devices.
+
+Cloud services are usually categorized into these main models:
+Model	Description	Example
+IaaS (Infrastructure as a Service)	Basic building blocks like virtual machines, storage, networking.	AWS EC2, Azure VM
+PaaS (Platform as a Service)	A platform to build and deploy applications without managing infrastructure.	AWS Elastic Beanstalk, Heroku
+SaaS (Software as a Service)	Fully functional applications delivered over the internet.	Gmail, Google Docs, Salesforce
+
+ Examples of Cloud Providers:
+  AWS (Amazon Web Services)
+  Microsoft Azure
+  Google Cloud Platform (GCP)
+  IBM Cloud
+  Oracle Cloud
+
+Benefits of Cloud Computing:
+Cost-Effective – No need to buy or maintain physical servers.
+Scalable – Easily scale resources up or down as needed.
+Reliable – Built-in redundancy and high availability.
+Fast Deployment – Services and infrastructure can be set up quickly.
+Accessible – Accessible from anywhere via the internet.
+Secure – Advanced security tools and compliance features.
+
+
+## private,public,hybrid cloud
+
+A Private Cloud is owned and operated by a single organization, using dedicated hardware exclusively for that organization. Access is restricted to internal users, and the infrastructure is highly customizable to meet specific business needs. However, it involves high upfront and ongoing maintenance costs. It offers strong security due to dedicated resources and isolated networks but has limited scalability since it's bound by internal resources. Private Clouds are typically managed internally or by a third-party provider.
+
+In contrast, a Public Cloud is owned and operated by cloud service providers like AWS, Azure, or Google Cloud. It uses shared infrastructure across multiple customers and is accessible over the internet to anyone with an account. While customization is limited to standard services offered by the provider, it is cost-effective with a pay-as-you-go model. Security is robust but shared, depending on the provider’s implementation. Public Clouds are highly scalable and fully managed by the cloud provider, making them ideal for dynamic and growing workloads.
+
+Use Cases
+Private Cloud:
+  Financial institutions
+  Government organizations
+  Companies with strict data compliance needs (e.g., HIPAA, GDPR)
+Public Cloud:
+  Startups and SMBs needing cost-effective solutions
+  Web hosting and application development
+  Scalable applications like e-commerce, streaming, etc.
+
+hybrid cloud:
+A Hybrid Cloud combines both public and private clouds, offering flexibility—sensitive data stays private, while general workloads use public cloud.
+
+
+# Virtulization
+
+Virtualization is the process of creating a virtual version of physical hardware—such as servers, storage devices, networks, or operating systems—using software.
+Instead of running one operating system on one physical machine, virtualization allows multiple operating systems (or environments) to run on a single physical machine as virtual machines (VMs).
+
+How It Works:
+  A software layer called a hypervisor sits between the physical hardware and virtual machines.
+  The hypervisor divides the physical resources (CPU, RAM, storage) and allocates them to each VM.
+  Each virtual machine operates like a real computer, with its own OS and applications.
+
+Virtualization in cloud computing is the key technology that allows cloud providers (like AWS, Azure, and Google Cloud) to efficiently share physical hardware resources among many users by creating virtual machines (VMs) or containers.
+
+ How It Works in the Cloud:
+  A physical server (host) is installed in a data center.
+  Virtualization software (hypervisor) is installed on that server.
+  The hypervisor creates multiple virtual machines (VMs), each with its own OS and applications.
+  Each VM is assigned virtual CPU, RAM, and storage, drawn from the host’s physical resources.
+  Cloud providers then rent these VMs to users, charging for usage (like EC2 in AWS).
+
+Example in AWS:
+EC2 (Elastic Compute Cloud) uses virtualization to offer different virtual servers (instances) to users.
+Underneath EC2, AWS uses Xen, KVM, or its own Nitro hypervisor to manage VMs.
+
+Benefits of Virtualization in Cloud:
+Benefit	Description
+Efficiency	Maximizes hardware utilization
+Flexibility	Easily start, stop, scale VMs
+Isolation	Each VM is isolated from others
+Disaster Recovery	Easy to back up, migrate, or restore VMs
+Security	Virtual machines run in isolated environments
+
