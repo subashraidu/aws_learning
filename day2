@@ -1,0 +1,31 @@
+### IAM, users, policies, groups rules
+
+## IAM
+IAM (Identity and Access Management) is an AWS service that helps you securely manage access to your AWS resources.IAM lets you control who can do what in your AWS account. You can create users, groups, and roles, and assign permissions to them using policies.
+
+  What You Can Do with IAM:
+    Create and manage individual users
+    Organize users into groups
+    Set permissions using policies
+    Enable MFA (Multi-Factor Authentication) for extra security
+    Grant temporary access to resources (e.g., for EC2 or Lambda using roles)
+    Monitor access with IAM Access Analyzer and CloudTrail
+
+# user
+An IAM User represents a person or an application that interacts with AWS. Each user has credentials (like username/password or access keys) to log in and perform actions.
+Example: You create a user named devops_engineer to allow a real engineer to access AWS resources.
+
+# Groups
+An IAM Group is a collection of users. You attach permissions (policies) to the group, and all users in the group automatically inherit those permissions.
+Example: A group named DevOpsTeam might have access to EC2, S3, and CodePipeline. Adding a user to this group gives them those permissions.
+
+# Role
+An IAM Role is an identity with a set of permissions, but it is not associated with a specific user. Instead, it is assumed temporarily by users, AWS services (like EC2, Lambda), or applications. Roles are created for talking between 2 AWS accounts, A on prem application accessing something from AWS. Roles can be assumed temporarily by users or services
+Example: An EC2 instance can assume a role that allows it to access an S3 bucket, without needing stored access keys.
+
+# Policy
+A Policy is a JSON document that defines permissions (what actions are allowed or denied on which AWS resources). Policies can be attached to users, groups, or roles.
+Example: A policy might allow "s3:GetObject" on a specific bucket, or full access to EC2 services.
+
+
+
