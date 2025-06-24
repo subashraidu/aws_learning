@@ -1,0 +1,48 @@
+###### EC2, types, regions, availability zones, latency, downtime, 
+
+# EC2
+
+Amazon EC2 (Elastic Compute Cloud) is a core AWS service that lets you run virtual servers (called instances) in the cloud.
+It provides resizable compute capacity, meaning you can choose how much CPU, memory, and storage you need—and only pay for what you use.
+
+What Can You Do with EC2?
+Host websites and web applications
+Run backend services or APIs
+Deploy databases or containers
+Set up custom environments (Linux, Windows, etc.)
+Build test/staging servers for DevOps
+
+EC2 Features:
+Scalable – Add or remove instances on demand
+Flexible – Choose OS, storage, networking, and software
+Secure – Use IAM roles, security groups, and VPCs
+Cost-Effective – Pay only for what you use (On-Demand, Spot, Reserved)
+
+Key Components:
+Instance	A virtual machine (like a server) running in EC2
+AMI (Amazon Machine Image)	A pre-configured template used to launch an EC2 instance (includes OS + software)
+Instance Type	Specifies the hardware of the instance (e.g., t2.micro, m5.large)
+EBS (Elastic Block Store)	Storage volume attached to EC2 instances
+Security Group	Acts like a virtual firewall to control traffic to/from your instance
+Key Pair	SSH credentials used to securely connect to Linux instances
+
+# types of EC2 instances
+
+Amazon EC2 offers different instance types designed for various use cases. Each instance type is optimized for specific workloads like compute, memory, storage, or networking.
+
+EC2 Instance Families (Main Categories):
+General Purpose	-- Balanced CPU, memory, and networking	-- Web servers, dev/test, small databases
+Compute Optimized	-- High-performance CPU	-- High-performance web servers, batch processing
+Memory Optimized	-- More RAM than CPU	-- In-memory databases, big data, caching
+Storage Optimized	-- High IOPS and throughput	-- NoSQL DBs, data warehouses, analytics
+Accelerated Computing	-- GPU/FPGA for heavy compute	-- Machine learning, HPC, video rendering
+
+ Choosing the Right Instance
+Requirement	Recommended Family
+General web app	t3, m5
+CPU-intensive tasks	c5, c6g
+RAM-heavy workloads	r5, x1
+High-speed storage	i3, d3
+Machine learning	p3, g5
+
+
