@@ -1,4 +1,4 @@
-###### EC2, types, regions, availability zones, latency, downtime, 
+###### EC2, types, ram and cpu differences, regions, availability zones, latency, downtime, 
 
 # EC2
 
@@ -45,4 +45,41 @@ RAM-heavy workloads	r5, x1
 High-speed storage	i3, d3
 Machine learning	p3, g5
 
+# What is Compute 
+Compute refers to the processing power required to run applications, services, and systems. In simple terms, it's the CPU (Central Processing Unit) and memory (RAM) resources that allow software to perform tasks—like executing code, running databases, or handling user requests.
+
+Examples of Compute Services:
+Cloud Provider	-- Compute Service	-- Description
+AWS	-- EC2 (Elastic Compute Cloud)	-- Run virtual servers
+Azure	-- Virtual Machines (VMs)	-- Cloud-hosted Windows/Linux servers
+Google -- Cloud	Compute Engine	-- Scalable VMs on demand
+
+# CPU vs RAM – Key Differences
+
+Feature	------ CPU	----------- RAM
+Role	---------Executes instructions	-------Stores data temporarily for quick access
+Think of as	--------- The brain	-------The short-term memory
+Speed Affects	-------- How fast tasks are processed	-----------How many tasks you can handle at once
+Data Stored	----------- None (just processes)	------------- Yes (active data and instructions)
+Permanent?	---------- No – doesn’t store data	--------- No – data is lost when powered off
+Cloud Example	-------- 2 vCPUs in an EC2 instance	-------- 8 GB RAM in the same EC2 instance
+
+Real-World Analogy:
+CPU is like the chef in a kitchen—he does the actual cooking (processing).
+RAM is like the counter space—it holds the ingredients and tools the chef needs immediately.
+
+CPU stands for Central Processing Unit. It's the brain of a computer or server. It performs all the calculations, logic, and decision-making tasks.
+ CPU is used for:
+Running applications and programs
+Performing calculations (math, logic)
+Controlling how other parts of the system work
+In cloud (like AWS EC2), you can choose how many vCPUs (virtual CPUs) your instance gets—more CPUs = faster processing.
+
+
+RAM stands for Random Access Memory. It's the computer's short-term memory. It temporarily stores data and instructions that the CPU needs right now or very soon.
+ RAM is used for:
+Storing active programs and files
+Speeding up system performance by avoiding repeated disk reads
+Allowing multitasking (running many apps at once)
+In cloud instances, more RAM allows you to run heavier workloads like large databases, in-memory caching, etc.
 
