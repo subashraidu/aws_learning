@@ -83,3 +83,78 @@ Speeding up system performance by avoiding repeated disk reads
 Allowing multitasking (running many apps at once)
 In cloud instances, more RAM allows you to run heavier workloads like large databases, in-memory caching, etc.
 
+# What Happens When CPU Utilization is Full?
+When CPU is at 100%, it means the processor is fully occupied and cannot take on more tasks efficiently. This leads to slow performance or failures in running applications.
+
+Common Symptoms or Errors:
+High Latency	--------  App takes too long to respond (e.g., API calls slow down)
+Time-Outs	-----------  Web requests or database queries may fail due to delays
+Application Crashes--	 Some apps may crash if they can’t get CPU time
+Dropped Connections--	 Users may be disconnected or see errors like “502 Bad Gateway”
+System Hang	---------  The entire VM may freeze or become unresponsive
+Failed Deployments	--  CI/CD jobs or deployments may hang or time out
+Service Unavailable	-- Load balancer might return “503 Service Unavailable” if the app can’t respond
+
+Best Practices to Avoid CPU Bottlenecks:
+Monitor CPU usage (using CloudWatch, top, htop, etc.)
+Auto-scale resources if on cloud (e.g., EC2 Auto Scaling)
+Optimize application code – avoid infinite loops, inefficient queries
+Use load balancing to spread traffic across instances
+Upgrade to a larger instance (with more vCPUs)
+
+#What Happens When RAM Is Full?
+When your VM runs out of available RAM, the system can no longer hold active data or applications in memory. It may try to use swap space (disk), which is much slower, or it may terminate processes.
+
+Common Symptoms or Errors:
+Application Crashes	----------- The OS may kill apps (especially large or memory-intensive ones)
+Out of Memory (OOM) Errors	---- You may see errors like OutOfMemoryError (Java), Cannot allocate memory, or Killed
+System Slowness	--------------- Heavy disk swapping leads to very slow performance
+Service Unavailable	----------- Apps might fail to start or respond (503 Service Unavailable)
+Deployment Failures	----------- Services like Docker or builds might fail due to memory exhaustion
+Login Issues	------------------ You might even struggle to SSH into the VM if RAM is completely exhausted
+
+Will the Application Still Work?
+Not reliably. When RAM is full:
+Some apps might hang, behave erratically, or crash completely
+New processes or connections won’t be handled
+Performance degrades severely due to swapping
+
+Best Practices to Prevent Full RAM Issues:
+Monitor memory usage with tools like CloudWatch, top, or free -m
+Optimize app memory usage (e.g., by fixing memory leaks)
+Use swap space cautiously to prevent crashes (but it's slow)
+Scale up to a VM with more RAM
+Use auto-scaling or load balancing for high-traffic apps
+
+#Regions and Availability Zones (AZs)
+
+An AWS Region is a geographic location where AWS has multiple data centers. Each region is independent and physically separate from others.
+Example Regions:
+us-east-1 (North Virginia)
+ap-south-1 (Mumbai)
+eu-west-1 (Ireland)
+
+You choose a region based on where your users are, data residency laws, or latency requirements.
+
+Availability Zone (AZ)
+An Availability Zone is one or more data centers within a region that are physically isolated but connected through low-latency links.
+Each region has 2 or more AZs
+AZs are labeled like us-east-1a, us-east-1b, etc.
+You can use multiple AZs for high availability and fault tolerance
+
+If one AZ fails, your app can still run from another AZ.
+
+# What is Latency?
+Latency is the time delay between a user’s action and the response from a system or service.
+
+Latency = Response Time
+It’s usually measured in milliseconds (ms)
+
+Causes of Latency:
+Distance between users and AWS data centers
+Network congestion
+Server processing time
+Service-specific delays (e.g., cold starts in AWS Lambda)
+
+
+
