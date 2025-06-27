@@ -1,0 +1,47 @@
+### VPC
+
+
+A VPC (Virtual Private Cloud) is a virtual network dedicated to your AWS account. It allows you to launch AWS resources (like EC2, RDS, etc.) in a logically isolated section of the AWS cloud. You control IP ranges, subnets, route tables, gateways, and network access rules.
+
+Pros of VPC:
+Isolation: Full control over your virtual network.
+Security: Fine-grained control via Security Groups and Network ACLs.
+Custom Networking: Choose IP ranges, create public/private subnets.
+Scalability: Easily scale network infrastructure.
+Hybrid Connectivity: Connect on-premises infrastructure via VPN or Direct Connect.
+
+Cons of VPC:
+Complexity: Requires understanding of networking concepts.
+Misconfiguration Risks: Improper rules or route tables can cause outages or expose resources.
+Cost: Some components (e.g., NAT Gateway, VPN) incur additional charges.
+
+Uses of VPC:
+Hosting public-facing web apps.
+Running backend services in private subnets.
+Setting up hybrid cloud networks.
+Isolating environments (dev, test, prod).
+Hosting secure data stores (e.g., RDS in private subnet).
+
+Importance of VPC:
+Essential for security and network control.
+Acts as the foundation for most AWS deployments.
+Enables multi-tier architecture (web, app, DB layers).
+Helps meet compliance and regulatory requirements.
+
+Components of a VPC and Their Uses:
+VPC	-------------------------> The isolated network where all AWS resources are launched.
+Subnets	---------------------> Divide the VPC's IP range into smaller networks; can be public or private.
+Route Tables ----------------> Define how traffic flows within the VPC and to the internet.
+Internet Gateway (IGW)	-----> Allows resources in public subnets to access the internet.
+NAT Gateway / Instance ------> Enables private subnets to access the internet (e.g., for updates) securely.
+Elastic IPs -----------------> Static public IP addresses used with NAT Gateways, EC2, etc.
+Security Groups	-------------> Stateful firewalls attached to resources, control inbound/outbound traffic.
+Network ACLs	---------------> Stateless firewalls at subnet level for additional traffic control.
+DHCP Options Sets	-----------> Customize DHCP options like DNS server, domain name for VPC resources.
+VPC Peering -----------------> Connects two VPCs privately over AWS’s network.
+Transit Gateway	-------------> Central hub for connecting multiple VPCs and on-premises networks.
+VPN Gateway -----------------> Enables site-to-site VPN connection to your on-premises network.
+VPC Endpoints ---------------> Privately connect your VPC to AWS services without an internet gateway.
+Flow Logs -------------------> Capture network traffic logs for analysis and troubleshooting.
+Carrier Gateway -------------> For connecting to AWS Wavelength (used in mobile edge computing).
+
